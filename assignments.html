@@ -1,8 +1,19 @@
 <html>
-    <h1>
-        <a href="index.html">Home</a>
-    </h1>
+    <head>
+        <style>
+            body{font-family: 'Times New Roman', Times, serif; font-size: larger; background-color: rgb(112, 150, 206);}
+            .nav {background-color: rgb(185, 185, 236); overflow: hidden;}
+            .nav a{float: left; color: rgb(0, 0, 0); text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
+            .nav a:hover{background-color: rgba(0, 170, 255, 0.568);}
+            .nav a.active {background-color: rgb(0, 40, 85); color: aliceblue;}
+        </style>
+    </head>
+
     <body>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a class="active" href="assignments.html">Assignments</a>
+        </div>
         <p>
             <a href="http://165.22.227.110/~ykogan/content/assignment1.txt">Assignment 1</a>
         </br>

@@ -1,31 +1,51 @@
 <html>
     <head>
         <title>Homepage</title>
+        <style>
+            body{font-family: 'Times New Roman', Times, serif; background-color: rgb(112, 150, 206); font-size: larger;}
+            img{display: block; margin: 0% auto; height: auto; border: 5px; border-style: groove; border-color: rgb(0, 0, 116); padding: 5px; background-color: rgb(65, 65, 65);}
+            .nav {background-color: rgb(185, 185, 236); overflow: hidden;}
+            .nav a{float: left; color: rgb(0, 0, 0); text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
+            .nav a:hover{background-color: rgba(0, 170, 255, 0.568);}
+            .nav a.active {background-color: rgb(0, 40, 85); color: aliceblue;}
+            h1{text-align: center;}
+            .container {background-image: url(night_sky.jpg); padding: 20px;}
+            .container .text {color: aliceblue; text-align: center;}
+            .block {position:relative; background-color: aliceblue; text-align: center; margin: auto; width: 30%; border: 5px; border-style: ridge; border-color: black;}
+            .list {display: table; margin: 0 auto; text-align: justify; padding: 10px;}
+        </style>
     </head>
 <body>
+    <div class="nav">
+        <a class="active" href="index.html">Home</a>
+        <a href="assignments.html">Assignments</a>
+    </div>
     <h1>Hi, my name is Yana! Welcome to my page :)</h1>
     <p>
-        <img width="200" src="photo.JPG" alt="Photo of Yana"
+        <img width="200" src="photo.JPG" alt="Photo of Yana">
  
     </p>
+    <div class="container">
+        <div class="text">
+            I am a fourth year management student, doing a double concentration in Finance and Information Systems, and a minor in MAT. </br>
+            I really enjoy listening to a variety of genres, including Indie, Rock, and EDM. I also play guitar and occasionally DJ! 
+        </div>
+    
   <p>
-      I am a fourth year management student, doing a double concentration in Finance and Information Systems, and a minor in MAT
-  </p>
-  <p>
-      I really enjoy listening to a variety of genres, including Indie, Rock, and EDM. I also play guitar and occasionally DJ!
-  </p>
-  <p>
-      I'm taking 5 courses this semester:
-      <ul>
-        <li><a href="https://www.mcgill.ca/study/2020-2021/courses/insy-331" target="_blank">Managing IT</a></li>
-        <li><a href="https://www.mcgill.ca/study/2020-2021/courses/fine-441" target="_blank">Investment Management</a></p></li>
-        <li><a href="https://www.mcgill.ca/study/2020-2021/courses/fine-443" target="_blank">Applied Corporate Finance</a></p></li>
-        <li><a href="https://www.mcgill.ca/study/2020-2021/courses/musr-200" target="_blank">Audio Recording Essentials</a></p></li>
-        <li><a href="https://www.mcgill.ca/study/2020-2021/courses/mumt-301" target="_blank">Music and the Internet</a></p></li>
-      </ul>
-      <p>
-
-      </p>
+      <div class="block">
+        <span style="font-weight: bold;">I'm taking 5 courses this semester:</span>
+        <div class="list">
+        <ul>
+          <li><a href="https://www.mcgill.ca/study/2020-2021/courses/insy-331" target="_blank">Managing IT</a></p></li>
+          <li><a href="https://www.mcgill.ca/study/2020-2021/courses/fine-441" target="_blank">Investment Management</a></p></li>
+          <li><a href="https://www.mcgill.ca/study/2020-2021/courses/fine-443" target="_blank">Applied Corporate Finance</a></p></li>
+          <li><a href="https://www.mcgill.ca/study/2020-2021/courses/musr-200" target="_blank">Audio Recording Essentials</a></p></li>
+          <li><a href="https://www.mcgill.ca/study/2020-2021/courses/mumt-301" target="_blank">Music and the Internet</a></p></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    </br>
       Below you will find all my lovely classmates' sites:
       <ul>
        <li><a href="https://mumt301.github.io/nbendsza" target="_blank"><b>NBendzsa</b></a></li>
@@ -43,12 +63,6 @@
       </ul>
         
   </p>
-  <p>
-      
-  </p>
-<p> 
-    <a href="assignments.html">Assignments</a>
-</p>
-    
+   
 </body>
 </html>
