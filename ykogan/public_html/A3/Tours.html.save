@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {background-color: rgb(201,201,201); font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;}
+            .nav {background-color: black; overflow: hidden;}
+            .nav a{float: left; color: cadetblue; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
+            .nav a:hover {background-color: coral;}
+            .nav a.active {background-color: darkgrey; color: black;}
+            .grid-container{display: inline-grid;
+                grid-template-columns: auto auto auto;
+                background-image:url("pretty_sky.jpg");
+                background-repeat: no-repeat;
+                background-color: #5a646d;
+                padding: 20px;
+                position: relative;
+                text-align: center;
+                margin-top: 10px;
+                grid-column-gap: 5cm ;
+                grid-row-gap: 25px;}
+            .grid-item{color: azure;}
+            .date {font-weight: bold; color: rgb(163, 245, 245);}
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <a href="bandpage.html">Home</a>
+            <a href="bandbio.html">Bio</a>
+            <a href="Albums.html">Albums</a>
+            <a class="active" href="Tours.html">Tours</a>
+            <a href="https://mumt301.github.io/ykogan/index.html">Back to Yana</a>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item"><span class="date">Dec 17 2020</span>
+            </br>L'Olympia</div>
+            <div class="grid-item">Montreal, QC</div>
+            <div class="grid-item">Sold Out</div>
+
+            <div class="grid-item"><span class="date">Dec 18 2020</span>
+            </br>L'Olympia</div>
+            <div class="grid-item">Montreal, QC</div>
+            <div class="grid-item">Sold Out</div>
+
+            <div class="grid-item"><span class="date">Jun 19 2021</span>
+            </br>Hurricane Festival</div>
+            <div class="grid-item">Scheeel, NDS</div>
+            <div class="grid-item"><a href="https://www.hurricane.de/de/tickets/">Tickets</a></div>
+
+        </div>
+        <p>
+            Get notified when Half Moon Run is performing near you!
+            <form action="https://go.seated.com/notifications/welcome/d56a149c-a5c8-4c66-b55d-12c48b902065">
+                <input type="submit" value="Follow Half Moon Run">
+            </form>
+        </p>
+    </body>
+</html>

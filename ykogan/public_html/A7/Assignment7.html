@@ -1,0 +1,217 @@
+<html>
+    <head>
+        <title>Similar Song Request</title>
+        <link rel="stylesheet" href="https://minicss.org/flavorFiles/mini-default.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <style>
+            h{
+                font-weight: bolder;
+                font-size: larger;
+                margin-bottom: 5px;
+            }
+            body{
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+            }
+            img{
+                border-radius: 8px;
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;}
+            p{
+                text-align: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+                margin-bottom: 20px;
+            }
+            form{
+                background-color: rgb(79, 130, 207);
+                color: rgb(26, 25, 24);
+                font-weight: bolder;
+                text-align: center;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div>
+            <h1 style="text-align: center;">Input Information</h1>
+            <form method="GET">
+                <label for="tname">Track name?</label>
+                <input type="text" name="track" id="tname">
+                <!--<br> -->
+                <label for="aname">Artist name?</label>
+                <input type="text" name="artist" id="aname">
+                <!--<br> -->
+                <input type="submit" value="Get Tracks!">
+            </form>
+            
+            <div id="trackInfo">
+                <p id="placeholder"></p>
+
+            </div>
+
+        </div>
+
+        <script type="text/JavaScript">
+            let APIKey = "1d9a3d4707171505954ce4a45e024e22";
+            let infobox = document.getElementById(trackInfo);
+            let queryURL2 = '';
+
+            let text = '';
+            let TrackBios = [];
+            let trackImages = [];
+
+    
+            function similartrackQuery(){
+                let params = (new URL(document.location)).searchParams;
+                if (params.has('artist') && params.has('track')){
+                    let artistName = params.get('artist');
+                    console.log(artistName);
+    
+                    let trackName = params.get('track');
+                    console.log(trackName);
+
+                    let queryBase = "http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&";
+                    let queryURL = queryBase + "artist=" + artistName + "&track=" + trackName + "&api_key=" + APIKey;
+                    console.log(queryURL);
+
+                    httpGet(queryURL, getSimilar);
+                }
+
+
+            }
+
+            function httpGet(theURL, cbFunction) {
+
+                let xmlHttp = new XMLHttpRequest();
+
+                xmlHttp.open("GET", theURL);
+                xmlHttp.send();
+
+                xmlHttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        cbFunction(this); 
+                    }
+                        
+                }
+                }
+
+            function getSimilar(xhttp) {
+                let retrievedData = xhttp.responseXML;
+                console.log(retrievedData);
+
+                var Tracks = [];
+                var Artists = [];
+                var MBIDs = [];
+
+
+                for (i = 0; i < 5; i++){
+                    let trackData = retrievedData.getElementsByTagName('track')[i];
+                    let simTrackName = trackData.getElementsByTagName('name')[0].innerHTML;
+                    Tracks[i]= simTrackName;
+
+                    let simArtist = trackData.getElementsByTagName('artist')[0];
+                    let simArtistName = simArtist.getElementsByTagName('name')[0].innerHTML;
+                    Artists[i] = simArtistName;
+
+                }
+                console.log(Tracks);
+                console.log(Artists);
+
+                let placeholder = document.getElementById('placeholder');
+
+                queryBase2 = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=";
+                for (i = 0; i < 5; i++) {
+                    queryURL2 = queryBase2 + APIKey + "&artist=" + Artists[i] + "&track=" + Tracks[i];
+                    console.log(queryURL2);
+                    
+
+                    httpGet(queryURL2, getBioAndImage);
+
+                }
+
+                text += "The similar songs are: "
+                for (i = 0; i<5; i++){
+                    text+= Tracks[i] + " by " + Artists[i] + '; ';
+                }
+                text+= '<br><br>'
+
+                placeholder.innerHTML = text;
+
+
+            }
+
+            function getBioAndImage(xhttp) {
+                let retrievedData2 = xhttp.responseXML;
+                console.log(retrievedData2);
+
+                let albumInfo = retrievedData2.getElementsByTagName('album')[0];
+                let trackI = retrievedData2.getElementsByTagName('track')[0];
+                let artistI = trackI.getElementsByTagName('artist')[0];
+
+                let titleName = trackI.getElementsByTagName('name')[0].innerHTML;
+                let artistN = artistI.getElementsByTagName('name')[0].innerHTML;
+                
+
+                let header = document.createElement('h');
+                header.innerHTML = titleName + ' by ' + artistN;
+                placeholder.appendChild(header);
+
+                if (albumInfo != 'undefined' && albumInfo != null){
+                    let imageLink = albumInfo.getElementsByTagName('image')[3].innerHTML;
+
+                    let image = document.createElement('img');
+                    image.src = imageLink;
+                    placeholder.appendChild(image);
+
+                    trackImages.push(imageLink);
+                }else{
+                    let imageLink = 'No photo found';
+                    let noPic = document.createElement('p');
+                    noPic.innerHTML = imageLink;
+                    placeholder.appendChild(noPic);
+                    trackImages.push(imageLink);
+                }
+
+                console.log(trackI);
+
+                let trackWiki = trackI.getElementsByTagName('wiki')[0];
+                if (trackWiki != 'undefined' && trackWiki != null){
+                    let trackContent = trackWiki.getElementsByTagName('content')[0].innerHTML;
+                    console.log(trackContent);
+                    TrackBios.push(trackContent);
+
+                    let bio = document.createElement('p');
+                    bio.innerHTML = trackContent;
+                    placeholder.appendChild(bio);
+                }else{
+                    let trackContent = 'No information available.'
+
+                    TrackBios.push(trackContent);
+                    let bio = document.createElement('p');
+                    bio.innerHTML = trackContent;
+                    placeholder.appendChild(bio)
+                }
+
+                
+                console.log(trackImages);
+
+                console.log(TrackBios);
+
+
+
+
+            }
+
+
+            window.onload = similartrackQuery;
+        </script>
+
+    </body>
+
+</html>

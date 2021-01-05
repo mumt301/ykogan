@@ -1,0 +1,66 @@
+MUMT301-2020 Assignment 1
+QUESTIONNAIRE!
+
+The following questionnaire seeks to understand your previous knowledge about some of the concepts that we will learn in class during the coming term.
+
+1. Do you know any programming languages? If you do, which ones?
+I know the basics of JavaScript from an Intro to Programming course.
+
+2. What is your primary computer operating system (OS)?
+Windows 10.
+
+3. Do you own a smartphone, tablet, or mobile device? What is your favourite OS for mobile devices?
+I do own a smartphone. I primarily use iOS devices.
+
+4. Do you use any social networking services? If you do, which ones? Why?
+I use social networking services such as Facebook and Instagram. I use them to stay in touch with friends and family!
+
+5. Expand the following acronyms and do research about their meaning. You may look them up if you don't know:
+
+    HTTP: Hypertext Transfer Protocol
+    REST: Representational State Transfer    
+    API: Application Programming Interface
+
+6. Do you play a musical instrument or sing? If so, how much experience do you have?
+I play guitar and piano. I cannot read sheet music, but have several years under my belt. I would say I'm intermediate on guitar, but beginner on piano. I do also DJ and Scratch.
+
+7. Can you read music notation? If so, how well?
+I can't read music notation.
+
+8. How large is your personal music collection? Estimate the number of artists, albums, and songs. If instead you listen to music using streaming services, how many playlists, artists, albums, and songs do you have in your account?
+I primarily use streaming platforms, so I have too many songs and albums to count. Definitely in the thousands. As for playlists, I have about 10, one of which consists of 800 songs...
+
+9. How do you search and find new music?
+I find new music on the radio or through public playlists, as well as on social media through friends.
+
+10. Implement a script in your favourite programming language that takes numbers as its input until it receives the command "done." When it reads "done," print out the average of all the numbers that were input.
+
+If you don't know a programming language, write out all the steps you would need to accomplish the same task.
+
+Example: if we were writing a piece of software that took ingredients of a recipe and then, when it received the word "end" it printed the ingredients out, our steps might look like this:
+
+    1. Input ingredients
+    2. If input is not "end" add the ingredient to the ingredient list
+    3. Go to step 1.
+    4. If input is "end" print each ingredient in the ingredient list,
+    5. Exit.
+My answer: (unfortunately, I don't know how to do this in Java, but here are my steps)
+
+	1. Print "Please input numbers. Once complete, enter DONE";
+	2. Create a dynamic array to collect numbers (int or double);
+	3. Calculate the length of the array; 
+	4. Calculate sum of ints/doubles within the array;
+	5. Create boolean to check if input is String "DONE";
+	6. If input is DONE, print average;
+
+11. What is Git?
+I don't know. But from what I looked up, it's a control system that tracks changes in code and allows for easier coordination among several programers working on a single code.
+
+12. What is GitHub? Do you have an account? If you do not, create one. Provide your username.
+It is a development platform. My username is yanakog.
+
+13. Are you aware of any ways in which artists are dealing with public performances post-COVID? Do you think live performances are essential to your musical experience?
+Many artists have been hosting virtual shows, whether on Twitch, Youtube, Facebook, or all three. Additionally, some have been hosting concerts at Drive-In theatres, where all attendees remain in/on their vehicles to maintain social distancing regulations. Others have been creating interactive experiences such as Porter Robinson's website where his fans can interact with one another anonymously. Live performances are extremely important to most artists and their fans, as its not only a major source of revenue, but also allows for both parties to interact with one another. 
+
+14. Name two musical artists that you like. What do you find interesting about their music that makes you like them?
+I am a big fan of Deadmau5 and Muse. I am truly fascinated by Deadmau5' use of synths. Additionally, he isn't shy with experimenting and dabbling into different styles and genres. His beat in earlier albums such as >album title goes here< sometimes sounds as if it's completely off which also adds a surprise to his music. As for Muse, I really enjoy their emotional lyrics and songs, and lately their combination of more techy sounds to their classic rock.  
